@@ -1,0 +1,17 @@
+<script>
+    //declarando as variáveis
+    var nome = prompt('Qual seu nome?');
+    var idade = prompt('Qual sua idade?');
+    var linguagem = prompt('Qual linguagem de programação você está aprendendo?');
+
+    alert(nome + ', você tem ' + idade + ' anos e já está aprendendo ' + linguagem + ', legal!');
+    var gostas = prompt(nome + ', está gostando de estudar ' + linguagem + '? Digite sim ou não').toLowerCase();
+
+    if(gostas == 'sim'){
+        alert('Massa, ' + nome + '! Vai ficar cada vez mais legal.');
+    } else if (gostas == 'não' || gostas == 'nao'){
+        alert('Puxa vida, que pena. Tu já tentou conhecer outras linguagens, ' + nome + '?');
+    } else {
+        alert('Opa! Só consigo ler as palavras "sim" e "não".');  
+    }
+</script>

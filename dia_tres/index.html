@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+
+    let listaTec = [];
+    let novaTec = ''; 
+    let nome = prompt('Qual seu nome?');
+    alert('Opa, ' + nome + ', bora organizar seu plano de estudos?');
+    let areaEspecializacao = parseInt(prompt('Você pretende se especializar em front ou back-end? Digite 0 para front-end e 1 para back-end'));
+    
+    if(areaEspecializacao == 0){   
+       listaTec[0] = prompt(nome + ', pretende começar estudando React ou Vue?');
+    } else if (areasEpecializacao == 1){
+        listaTec[0] = prompt(nome + ', pretende começar estudando C# ou Java?');
+    } else {
+        alert('Vixi, essa opção não é válida. Reinicie a página e comece de novo, por favor.');
+    }
+
+    while(novaTec != 'não'){
+        novaTec = prompt('Tem mais alguma tecnologia que gostaria de aprender? Digite aqui. Caso contrário, digite "não".');
+        listaTec.push(novaTec);  
+    }
+
+    listaTec.pop();
+
+    alert(nome + ', aqui estão as tecnologias que você estudará: ' + listaTec);
+
+
+
+
+</script>

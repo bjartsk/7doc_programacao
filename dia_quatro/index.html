@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+    const numero = Math.floor(Math.random() * (10 - 0 + 1) + 1);
+    let chute = '';
+    let acertou = false
+
+    for(let i = 1; i <= 3; i++ ){
+        chute = prompt('Chute um número de 1 a 10')
+        if(chute == numero){
+            acertou = true;
+            alert('Yes, acertou!');
+            break;
+        }
+        else if(chute < 11 && chute != numero){
+            alert('Errou! Já foram ' + i + ' tentativas.');
+        } else {
+            alert('Esse número não é válido.')
+        }
+        if(i == 3){
+            alert('O número era ' + numero);
+        }
+    }
+</script>

@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+<script>
+    let frescos = [];
+    let cereais = [];
+    let limpeza = [];
+    let condimentos = [];
+    let compras = [frescos, cereais, limpeza, condimentos];
+    let item = '';
+    let adicionarItem = 'sim';
+
+    while(adicionarItem == 'sim'){
+        item = prompt('Qual item você gostaria de adicionar?');
+        categoria = prompt('A qual categoria esse item pertence? Digite "frescos", "cereais", "limpeza" ou "condimentos".');
+        if(categoria == 'frescos'){
+            frescos.push(item);
+        } else if(categoria == 'cereais'){
+            cereais.push(item);
+        } else if(categoria == 'limpeza'){
+            limpeza.push(item);
+        } else if(categoria == 'condimentos'){
+            condimentos.push(item);
+        }
+
+        adicionarItem = prompt('Gostaria de adicionar mais um item? Digite "sim" ou "não". Se quiser remover, digite 1.');
+        if(adicionarItem == 'não'){
+            break;
+        } else if(adicionarItem == '1'){
+            if(removeItem()){
+                alert(compras);
+            } else {
+                alert('Item não encontrado');
+            }
+        }
+    }
+
+    function removeItem(){
+        let itemRemovido = prompt('Qual item você gostaria de remover?'); 
+        for(categoria in compras){
+            let indice =  compras[categoria].indexOf(itemRemovido);
+            if(indice != -1){
+                compras[categoria].splice(indice, 1);
+                return true;
+            }
+        } 
+        return false;       
+    }
+
+    alert('Sua lista de compras é: \n Frescos: ' + frescos + '\n Cereais: ' + cereais + '\n Limpeza: ' + limpeza + '\n Condimentos: ' + condimentos );
+
+</script>

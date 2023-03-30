@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+<script>
+    let operador = '';
+    let resultado = '';
+    let primeiroNumero = '';
+    let segundoNumero = '';
+
+    while(operador != 'sair'){
+        operador = prompt('Digite o operador. +, -, * ou /. Se quiser encerrar o programa, digite "sair"');
+
+        if(operador == 'sair'){
+            break;
+        }
+        
+        if(operador == '+'){
+            perguntaNumeros();
+            soma();
+            mostraResultado();
+        } else if(operador == '-'){
+            perguntaNumeros();
+            subtrai();
+            mostraResultado();
+        } else if(operador == '*'){
+            perguntaNumeros();
+            multiplica();
+            mostraResultado();
+        } else if(operador == '/'){
+            perguntaNumeros();
+            divide();
+            mostraResultado();
+        } else {
+            alert('A calculadora não está preparada para realizar esse tipo de operação.');
+        }
+    }
+
+    function multiplica(){
+        resultado = primeiroNumero * segundoNumero;
+    }
+    function soma(){
+        resultado = primeiroNumero + segundoNumero;
+    }
+    function divide(){
+        resultado = primeiroNumero / segundoNumero;
+    }
+    function subtrai(){
+        resultado = primeiroNumero - segundoNumero;
+    }
+
+    function perguntaNumeros(){
+        primeiroNumero = parseInt(prompt('Digite o primeiro número'));
+        segundoNumero = parseInt(prompt('Digite o segundo número'));
+    }
+
+    function mostraResultado(){
+        alert(`O resultado de ${primeiroNumero} ${operador} ${segundoNumero} é ${resultado}`);
+    }
+
+</script>
